@@ -1,0 +1,77 @@
+.game{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.board{
+    width: fit-content;
+    border: 1px solid;
+    
+}
+.d-flex{
+    display: flex;
+    width: 100%;
+    /* margin: 0 auto; */
+}
+
+.border{
+    border: 1px solid black;
+}
+
+.mt-5{
+    margin: 15px 0px;
+}
+
+.pt-5{
+    padding: 15px 0px;
+}
+
+.btn{
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.bg-green{
+    background-color:seagreen;
+    color: white;
+}
+
+.bg-red{
+    background-color: tomato;
+    color: white;
+}
+
+.scoreLabel{
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+.banner{
+    position: absolute;
+    background-color: wheat;
+    top: 50%;
+    left:50%;
+    width: 70%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(-50%,-50%);
+
+}
+.banner h3{
+    margin: 0;
+    font-size: 4rem;
+}
+
+.banner p{
+    margin: 0;
+    font-size: 1rem;
+}
