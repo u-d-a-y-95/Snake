@@ -1,11 +1,11 @@
 
 const gameConfig = {
     boardWidth: 50,
-    boardHeight: 20,
+    boardHeight: 25,
     cellSize: 10,
     snakeSize: 3,
     snakeSpeed: 10 ,
-    cellBorder: false,
+    cellBorder: true,
     foodColor: 'green',
     SnakeColor: ""
 }
@@ -22,6 +22,7 @@ const board = document.getElementById('board')
 const playPauseBtn = document.getElementById('playPauseBtn')
 const resetBtn = document.getElementById('resetBtn')
 const scoreText = document.getElementById('scoreText')
+const banner = document.getElementById("banner")
 // let startPos = (Math.floor(boardSize/2) - Math.floor(snakeSize/2))
 
 const generateBoard = (boardWidth = 10, boardHeight = 10, cellSize = 5, cellBorder = true) => {
@@ -80,11 +81,13 @@ const updateSnakePosition = (headPos) => {
 
         if(i == 0 && (snake[i].x<0 ||  snake[i].x>=gameConfig.boardWidth || snake[i].y<0 || snake[i].y>=gameConfig.boardHeight)){
             stopGame()
+            banner.style.display="flex"
             return;
         }
 
         if (i == 0 && board.children[snake[i].y].children[snake[i].x].attributes.isSnakePart == 1) {
             stopGame()
+            banner.style.display="flex"
             return
         }
         if (i == 0 && board.children[snake[i].y].children[snake[i].x].attributes.isSnakePart == 2) {
@@ -151,6 +154,7 @@ const setGame = () => {
     playPauseBtn.textContent= "Play"
     playPauseBtn.classList.remove('bg-red')
     playPauseBtn.classList.add('bg-green')
+    banner.style.display = ""
 }
 
 
@@ -177,7 +181,7 @@ document.addEventListener('keyup', (e) => {
             direction.x = 0;
             direction.y = e.keyCode == 38 ? -1 : 1
         }
-    } else if (e.keyCode == 32) {
+    } else if (e.keyCode == 16) {
         playPauseBtnHandler()
     }
     else if (e.keyCode == 13) {

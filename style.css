@@ -55,15 +55,15 @@
     position: absolute;
     background-color: wheat;
     top: 50%;
-    left:50%;
-    width: 70%;
+    left:0;
+    right: 0;
     height: 100%;
 
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transform: translate(-50%,-50%);
+    transform: translateY(-50%);
 
 }
 .banner h3{
